@@ -18,7 +18,7 @@
       </div>
       <p class="header-title">My Library</p>
       <div class="create">
-        <button>New Book</button>
+        <button id="dialog-open">New Book</button>
       </div>
     </div>
 
@@ -35,6 +35,38 @@
       </div> -->
     </div>
   </div>
+
+  <dialog id="form-dialog">
+    <form action="" method="dialog">
+      <div>
+        <label for="book-title" class="block">Title</label>
+        <input type="text" id="book-title" name="title" placeholder="The Lord of the Rings" required>
+      </div>
+
+      <div>
+        <label for="book-title" class="block">Author</label>
+        <input type="text" id="book-author" name="author" placeholder="J.R.R Tolkein" required>
+      </div>
+
+      <div>
+        <label for="pages" class="block">Page Count</label>
+        <input type="text" id="pages" name="page-count" placeholder="1137" required>
+      </div>
+
+      <div class="read-status">
+        <p>Have you read this?</p>
+        <input type="radio" id="read" name="read-status" value="Already read">
+        <label for="read">Yes</label>
+        <input type="radio" id="not-read" name="read-status" value="Not read yet" checked>
+        <label for="not-read">No</label>
+      </div>
+
+      <div class="form-buttons">
+        <button type="submit" id="form-submit">Submit</button>
+        <button id="dialog-close">Cancel</button>
+      </div>
+    </form>
+  </dialog>
   
 
   <script src="scripts.js"></script>

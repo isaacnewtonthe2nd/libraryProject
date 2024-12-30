@@ -117,3 +117,24 @@ h1, h2, h3, h4, h5, h6 {
   background-color: rgb(232, 232, 232);
   padding: 1rem;
 }
+
+dialog {
+  width: 40%;
+  height: 65%;
+  margin: 15vh auto;
+  border-radius: 15px;
+  padding: 3vw;
+  font-size: 1.2rem;
+}
+
+.block {
+  display: block;
+}
+
+input[type="text"] {
+  width: 100%;
+}
+
+form div {
+  margin-bottom: 0.8rem;
+}
