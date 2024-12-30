@@ -62,10 +62,6 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
 }
 
-.logo {
-  width: 12vw;
-}
-
 .header {
   background-color: #cbbfb2;
   padding: 3vw;
@@ -77,9 +73,47 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
 
-.main {
+.main, .card-container, .card {
   display: grid;
+}
+
+.main {
   grid-template-rows: 1fr 5fr;
   width: 100vw;
   height: 100vh;
+}
+
+.card-container {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2vw;
+  padding: 3vw;
+}
+
+.card {
+  background-color: rgb(218, 218, 218);
+  padding: 1.5rem;
+  grid-template-rows: 3fr 1fr;
+  border-radius: 10px;
+  max-height: 35vh;
+}
+
+.title, .author {
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+  font-family: "Cinzel Decorative";
+  line-height: 1.2;
+  font-size: 1.5rem;
+}
+
+.author {
+  opacity: 0.5;
+  margin-top: 1rem;
+}
+
+.book-info {
+  background-color: rgb(232, 232, 232);
+  padding: 1rem;
 }
