@@ -23,7 +23,7 @@
     </div>
 
     <div class="card-container">
-      <!-- <div class="card">
+      <div class="card">
         <div class="book-name">
           <p class="title">Astronomy for People in a Hurry</p>
           <p class="author">by: Neil De'Grasse Tyson</p>
@@ -32,19 +32,19 @@
           <p class="page-count">Page Count: 244</p>
           <p class="status">Not yet read</p>
         </div>
-      </div> -->
+      </div>
     </div>
   </div>
 
   <dialog id="form-dialog">
-    <form action="" method="dialog">
+    <form action="" method="dialog" id="new-book-form">
       <div>
         <label for="book-title" class="block">Title</label>
         <input type="text" id="book-title" name="title" placeholder="The Lord of the Rings" required>
       </div>
 
       <div>
-        <label for="book-title" class="block">Author</label>
+        <label for="book-author" class="block">Author</label>
         <input type="text" id="book-author" name="author" placeholder="J.R.R Tolkein" required>
       </div>
 
@@ -62,8 +62,8 @@
       </div>
 
       <div class="form-buttons">
-        <button type="submit" id="form-submit">Submit</button>
-        <button id="dialog-close">Cancel</button>
+        <button type="submit">Submit</button>
+        <button id="dialog-close"  onclick="closeDialog()">Cancel</button>
       </div>
     </form>
   </dialog>
