@@ -28,6 +28,10 @@ function displayBooks (library) {
           <p class="page-count">Page Count: ${book.pages} </p>
           <p class="status">${book.status} </p>
       </div>
+      <div class="book-buttons" onclick="deleteCard(${i})">
+          <button class="delete" >Delete</button>
+          <button>Already read this.</button>
+      </div>
     `;
     card.classList.add("card");
     cardContainer.appendChild(card);
@@ -85,4 +89,9 @@ form.addEventListener("submit", (e) => {
   displayBooks(myLibrary);
 });
 
-// displayBooks(myLibrary);
+function deleteCard (index) {
+  myLibrary.splice(index, 1);
+  displayBooks(myLibrary);
+};
+
+displayBooks(myLibrary);

@@ -94,7 +94,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 1.5rem;
   grid-template-rows: 3fr 1fr;
   border-radius: 10px;
-  max-height: 35vh;
+  max-height: 38vh;
 }
 
 .title, .author {
@@ -137,4 +137,11 @@ input[type="text"] {
 
 form div {
   margin-bottom: 0.8rem;
+}
+
+.book-buttons {
+  margin-top: 1.5vh;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
