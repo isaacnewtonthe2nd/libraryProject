@@ -26,17 +26,15 @@ function displayBooks (library) {
       </div>
       <div class="book-info">
           <p class="page-count">Page Count: ${book.pages} </p>
-          <p class="status">${book.status} </p>
+          <p id="read-status${i}" class="status">${book.status} </p>
       </div>
-      <div class="book-buttons" onclick="deleteCard(${i})">
-          <button class="delete" >Delete</button>
-          <button>Already read this.</button>
+      <div class="book-buttons">
+          <button class="delete" onclick="deleteCard(${i})">Delete</button>
+          <button onclick="toggleRead('${book.status}', ${i})">Already read this.</button>
       </div>
     `;
     card.classList.add("card");
     cardContainer.appendChild(card);
-    book.id = i + 1;
-    console.log(book.id);
 
   }
 }
@@ -58,22 +56,6 @@ closeBtn.addEventListener("click", (event) => {
   dialog.close();
 });
 
-// submitBtn.addEventListener("click", displayFormData());
-
-// function displayFormData() {
-//   form.addEventListener("submit", (event) => {
-//     event.preventDefault();
-
-//     const title = document.getElementById("book-title").value;
-//     const author = document.getElementById("book-author").value;
-//     const pages = document.getElementById("pages").value;
-//     const readStatus = document.querySelector('input[name="read-status"]:checked').value;
-
-//     closeDialog();
-//     addBookToLibrary(title, author, pages, readStatus);
-//   });
-// }
-
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -82,8 +64,6 @@ form.addEventListener("submit", (e) => {
   const pages = document.querySelector("#pages");
   const readStatus = document.querySelector('input[name="read-status"]:checked');
 
-  console.log(title.value);
-  console.log(author.value);
   dialog.close();
   addBookToLibrary(title.value, author.value, pages.value, readStatus.value);
   displayBooks(myLibrary);
@@ -93,5 +73,15 @@ function deleteCard (index) {
   myLibrary.splice(index, 1);
   displayBooks(myLibrary);
 };
+
+function toggleRead (read, book) {
+  if (read === 'Already read') {
+    myLibrary[book].status = 'Not read yet';
+  } else {
+    myLibrary[book].status = 'Already read';
+  }
+
+  displayBooks(myLibrary);
+}
 
 displayBooks(myLibrary);
