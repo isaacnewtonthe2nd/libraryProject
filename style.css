@@ -57,21 +57,29 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 2rem;
 }
 
-.logo, .header {
+.logo {
   display: flex;
+  gap: 10px;
   align-items: center;
 }
 
 .header {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(3, 1fr);
   background-color: #cbbfb2;
   padding: 3vw;
-  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  gap: 10vw;
 }
 
 .header-title {
   font-size: 2rem;
   font-weight: bold;
 }
+
+
 
 .main, .card-container, .card {
   display: grid;
